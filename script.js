@@ -68,9 +68,9 @@ var app = new Vue({
         },
 
         addToCart(lesson) {
-            if (lesson.avaliability > 0) {
-                lesson.avaliability--;
-                var cartIndex = this.cart.findIndex((i) => i.lesson === lesson);
+            if (lesson.availability > 0) {
+                lesson.availability--;
+                var cartIndex = this.cart.findIndex((i) => i.lesson._id === lesson._id);
                 if (cartIndex > -1) {
                     this.cart[cartIndex].amount++;
                 } else {
@@ -126,13 +126,6 @@ var app = new Vue({
         canAddToCart(lessons) {
             return this.lessons.avaliability > this.checkItemCount(lessons.id);
         },
-        cartTotal() {
-            return this.cart.reduce(
-                (total, item) => total + item.amount * item.lesson.price,
-                0
-            );
-        },
-
         completeOrder() {
             return /^[a-zA-Z]+$/.test(this.username) && /^\d+$/.test(this.phone);
         },
