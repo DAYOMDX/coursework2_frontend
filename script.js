@@ -12,7 +12,7 @@ var app = new Vue({
         sortOrder: "asc",
         sortedLessons: [],
         //   baseURL: "https://cw2-backend.vercel.app/",
-        baseURL: "http://localhost:3000/",
+        baseURL: "https://cw2-backend-seven.vercel.app/",
     },
 
     created() {
